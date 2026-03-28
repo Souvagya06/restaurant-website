@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#b08c10",
+              "on-secondary-fixed": "#241a00",
+              "on-primary": "#3c2f00",
+              "background": "#131313",
+              "on-surface": "#e5e2e1",
+              "primary-container": "#d4af37",
+              "outline-variant": "#4d4635",
+              "primary": "#f2ca50",
+              "outline": "#99907c",
+              "on-primary-fixed-variant": "#574500",
+              "on-secondary-fixed-variant": "#584400",
+              "on-tertiary": "#303221",
+              "on-error": "#690005",
+              "surface-container-low": "#1c1b1b",
+              "tertiary-fixed-dim": "#c8c8b0",
+              "on-primary-container": "#554300",
+              "inverse-surface": "#e5e2e1",
+              "inverse-on-surface": "#313030",
+              "on-tertiary-fixed-variant": "#474836",
+              "tertiary-fixed": "#e4e4cc",
+              "on-tertiary-container": "#454634",
+              "on-tertiary-fixed": "#1b1d0e",
+              "secondary-fixed-dim": "#eac249",
+              "secondary-fixed": "#ffe08b",
+              "tertiary-container": "#b4b49d",
+              "on-primary-fixed": "#241a00",
+              "on-background": "#e5e2e1",
+              "primary-fixed-dim": "#e9c349",
+              "primary-fixed": "#ffe088",
+              "tertiary": "#cfd0b8",
+              "surface-container-lowest": "#0e0e0e",
+              "error": "#ffb4ab",
+              "surface-variant": "#353534",
+              "surface-container": "#201f1f",
+              "secondary": "#eac249",
+              "inverse-primary": "#735c00",
+              "error-container": "#93000a",
+              "surface-tint": "#e9c349",
+              "surface-container-highest": "#353534",
+              "on-surface-variant": "#d0c5af",
+              "on-secondary": "#3d2f00",
+              "surface-container-high": "#2a2a2a",
+              "surface-bright": "#393939",
+              "on-error-container": "#ffdad6",
+              "surface-dim": "#131313",
+              "surface": "#131313",
+              "on-secondary-container": "#352800"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(14, 14, 14, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-950/70 backdrop-blur-xl">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="font-serif text-2xl tracking-tighter text-yellow-500 dark:text-yellow-400">Khai Khai</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-sans uppercase tracking-[0.1em] text-xs text-neutral-400 hover:text-yellow-200 transition-colors duration-300" href="./home.html">Home</a>
+<a class="font-sans uppercase tracking-[0.1em] text-xs text-yellow-500 dark:text-yellow-400 relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-yellow-500 after:rounded-full" href="./menu.html">Menu</a>
+<a class="font-sans uppercase tracking-[0.1em] text-xs text-neutral-400 hover:text-yellow-200 transition-colors duration-300" href="./about.html">About</a>
+<a class="font-sans uppercase tracking-[0.1em] text-xs text-neutral-400 hover:text-yellow-200 transition-colors duration-300" href="./contact.html">Contact</a>
+<a class="font-sans uppercase tracking-[0.1em] text-xs text-neutral-400 hover:text-yellow-200 transition-colors duration-300" href="./reservations.html">Reservations</a>
+</div>
+<a href="./login.html"
+   class="font-sans uppercase tracking-[0.1em] text-xs px-6 py-2 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300">
+   Sign Up
+</a>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
+<!-- Hero Section -->
+<header class="mb-20">
+<div class="flex flex-col md:flex-row items-end gap-8">
+<div class="md:w-1/2">
+<h1 class="font-headline text-6xl md:text-8xl italic leading-none tracking-tighter mb-6">
+                        The Seasonal <br/> <span class="text-primary">Collection</span>
+</h1>
+<p class="text-on-surface-variant max-w-md font-body text-lg leading-relaxed">
+                        A curated exploration of terrestrial and oceanic treasures, crafted with precision and a commitment to pure flavors.
+                    </p>
+</div>
+<div class="md:w-1/2 h-64 w-full bg-surface-container overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Gourmet plating of seasonal vegetables and microgreens" src="/assets/images/kebab.jpg"/>
+</div>
+</div>
+</header>
+<!-- Category Tabs -->
+<section class="mb-16 border-b border-outline-variant/20">
+<div class="flex space-x-12 overflow-x-auto pb-4 no-scrollbar">
+<button onclick="switchTab(this, 'starters')" data-tab="starters" class="tab-btn font-label uppercase tracking-widest text-sm text-primary border-b-2 border-primary pb-4 whitespace-nowrap">Starters</button>
+<button onclick="switchTab(this, 'mains')" data-tab="mains" class="tab-btn font-label uppercase tracking-widest text-sm text-on-surface-variant hover:text-primary transition-colors pb-4 whitespace-nowrap">Main Course</button>
+<button onclick="switchTab(this, 'desserts')" data-tab="desserts" class="tab-btn font-label uppercase tracking-widest text-sm text-on-surface-variant hover:text-primary transition-colors pb-4 whitespace-nowrap">Desserts</button>
+</div>
+</section>
+
+<!-- Menu Grid (dynamically populated) -->
+<div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-12 transition-opacity duration-300"></div>
+
+<script>
+const menuData = {
+  starters: [
+    {
+      name: "Fish Tandoori",
+      price: "₹ 150",
+      description: "Popular Indian dish featuring firm white fish (like pomfret, salmon, or tilapia) marinated in thick yogurt, ginger-garlic paste, lemon juice, and spices—including Kashmiri chili, turmeric, and garam masala.",
+      img: "/assets/images/fish tandoori.jpg"
+    },
+    {
+      name: "Fish Malai",
+      price: "₹ 170",
+      description: "Luxurious Indian starter featuring boneless, succulent fish cubes—typically Basa, Cod, or Tilapia—marinated in a rich, creamy mixture and grilled or baked to perfection.",
+      img: "/assets/images/fish malai.webp"
+    },
+    {
+      name: "Murgh Tandoori",
+      price: "₹ 350",
+      description: "Popular North Indian dish consisting of chicken marinated in a mixture of yogurt, ginger-garlic paste, and aromatic spices like garam masala and Kashmiri chili, then traditionally roasted in a clay tandoor oven.",
+      img: "/assets/images/murgh tandoori.jpg"
+    },
+    {
+      name: "Murgh Tangri",
+      price: "₹ 320",
+      description: "Popular North Indian/Mughlai appetizer featuring chicken drumsticks marinated in a rich, spiced yogurt mixture and grilled to tender perfection.",
+      img: "/assets/images/murgh tangri.webp"
+    },
+    {
+      name: "Chicken Tikka Kebab",
+      price: "₹ 350",
+      description: "Popular Indian dish featuring boneless chicken pieces marinated in yogurt and a blend of spices, then grilled or baked until tender and slightly charred.",
+      img: "/assets/images/chicken tikka kebab.jpg"
+    },
+    {
+      name: "Chicken Hariyali Kebab",
+      price: "₹ 360",
+      description: "Vibrant North Indian appetizer featuring tender, juicy chicken marinated in a thick, green paste of coriander (cilantro), mint, green chillies, ginger, garlic, and yogurt.",
+      img: "/assets/images/chicken hariyali kebab.webp"
+    },
+    {
+      name: "Chicken Reshmi Kebab",
+      price: "₹ 300",
+      description: "Rich, creamy, and mildly spiced Indian-style chicken dish featuring marinated chicken cooked in a gravy made from yogurt, cream, cashews, and aromatic spices.",
+      img: "/assets/images/chicken reshmi kebab.webp"
+    },
+    {
+      name: "Murgh Afghani",
+      price: "₹ 315",
+      description: "Popular Mughlai dish featuring tender, boneless chicken marinated in a rich mixture of yogurt, cream, cashew nut paste, and cheese.",
+      img: "/assets/images/murgh afghani.jpg"
+    },
+    {
+      name: "Mutton Seekh Kebab",
+      price: "₹ 380",
+      description: "Popular Indian appetizer featuring minced mutton (goat or lamb) seasoned with aromatic spices, ginger, garlic, herbs, and onions.",
+      img: "/assets/images/mutton seekh kebab.jpg"
+    }
+  ],
+  mains: [
+    {
+      name: "Dal Makhni",
+      price: "₹ 125",
+      description: "Rich, creamy North Indian Punjabi dish made from slow-cooked whole black lentils (urad dal) and kidney beans (rajma).",
+      img: "/assets/images/dal makhni.jpg"
+    },
+    {
+      name: "Kadhai Paneer",
+      price: "₹ 175",
+      description: "Popular, vibrant North Indian dish featuring stir-fried paneer (cottage cheese), crunchy bell peppers, and onions coated in a thick, spicy tomato gravy.",
+      img: "/assets/images/kadhai paneer.jpg"
+    },
+    {
+      name: "Palak Paneer",
+      price: "₹ 160",
+      description: "Popular North Indian Punjabi dish consisting of soft cottage cheese cubes (paneer) cooked in a thick, smooth, and vibrant green puree of blanched spinach (palak), spices, and aromatics like garlic and ginger.",
+      img: "/assets/images/palak paneer.jpg"
+    },
+    {
+      name: "Chicken Rezala",
+      price: "₹ 200",
+      description: "Rich, aromatic, and mildly spiced Mughlai chicken curry originating from Bengal.",
+      img: "/assets/images/chicken rezala.jpg"
+    },
+    {
+      name: "Chicken Kosha",
+      price: "₹ 185",
+      description: "Classic, rich Bengali-style chicken curry characterized by its thick, dark, and spicy gravy.",
+      img: "/assets/images/chicken kosha.jpeg"
+    },
+    {
+      name: "Chicken Curry",
+      price: "₹ 200",
+      description: "Diverse South Asian dish featuring chicken simmered in a rich, spiced sauce made from onions, ginger, garlic, tomatoes, and aromatic spices like turmeric, cumin, and coriander.",
+      img: "/assets/images/chicken curry.jpg"
+    },
+    {
+      name: "Chicken Tikka Butter Masaala",
+      price: "₹ 295",
+      description: "Rich, creamy, and mildly spiced Indian dish featuring marinated, yogurt-roasted chicken chunks (tikka) simmered in a smooth tomato-based sauce.",
+      img: "/assets/images/chicken tikka butter masala.jpg"
+    },
+    {
+      name: "Chicken Reshmi Butter Masala",
+      price: "₹ 300",
+      description: "Rich, mild Mughlai dish featuring tender, marinated grilled chicken (kebabs) simmered in a silky, creamy cashew and tomato-based gravy.",
+      img: "/assets/images/chicken reshmi butter masala.jpg"
+    },
+    {
+      name: "Fish Curry",
+      price: "₹ 200",
+      description: "Vibrant, aromatic dish featuring tender fish simmered in a spiced, often coconut-based, sauce.",
+      img: "/assets/images/fish curry.jpg"
+    },
+    {
+      name: "Prawn Malai Curry",
+      price: "₹ 300",
+      description: "Classic Bengali dish featuring large freshwater or tiger prawns cooked in a rich, creamy, and mildly sweet coconut milk gravy.",
+      img: "/assets/images/prawn malai curry.webp"
+    },
+    {
+      name: "Mutton Kosha",
+      price: "₹ 325",
+      description: "Classic, slow-cooked Bengali mutton curry characterized by a rich, dark brown, and thick gravy, where mutton is sautéed over low heat for an extended period.",
+      img: "/assets/images/kosha.jpg"
+    },
+    {
+      name: "Mutton Dak Bungalow",
+      price: "₹ 380",
+      description: "Rich, colonial-era Anglo-Indian curry featuring tender mutton, potatoes, and hard-boiled eggs in a savory, spiced gravy.",
+      img: "/assets/images/mutton dak bungalow.jpg"
+    },
+    {
+      name: "Steam Rice",
+      price: "₹ 90",
+      description: "A type of rice that has been partially cooked with steam and dried before milling.",
+      img: "/assets/images/steam rice.jpg"
+    },
+    {
+      name: "Jeera Rice",
+      price: "₹ 130",
+      description: "Popular, aromatic North Indian dish made by tempering fluffy basmati rice with cumin seeds and ghee or oil.",
+      img: "/assets/images/jeera rice.jpg"
+    },
+    {
+      name: "Peas Pulao",
+      price: "₹ 150",
+      description: "Popular, fragrant Indian one-pot rice dish made by cooking basmati rice with green peas, aromatic spices (such as cumin, cloves, cardamom), ghee, and sometimes onions.",
+      img: "/assets/images/peas pulao.jpg"
+    },
+    {
+      name: "Tandoori Roti",
+      price: "₹ 15",
+      description: "Popular North Indian unleavened flatbread, traditionally made from whole wheat flour (atta) and cooked in a cylindrical clay oven (tandoor).",
+      img: "/assets/images/tandoori roti.webp"
+    },
+    {
+      name: "Butter Naan",
+      price: "₹ 30",
+      description: "Popular, soft, and leavened Indian flatbread made from all-purpose flour, yogurt, and yeast or baking soda, traditionally baked in a tandoor (clay oven).",
+      img: "/assets/images/butter naan.webp"
+    },
+    {
+      name: "Lachha Paratha",
+      price: "₹ 25",
+      description: "Popular North Indian, multi-layered shallow-fried flatbread made from whole wheat flour, known for its distinctively crispy, flaky texture on the outside and soft interior.",
+      img: "/assets/images/lachha paratha.jpg"
+    }
+  ],
+  desserts: [
+    {
+      name: "Misti Doi",
+      price: "₹ 50",
+      description: "Traditional Bengali fermented sweet yogurt, popular for its thick, creamy texture and light brown color.",
+      img: "/assets/images/misti doi.jpg"
+    },
+    {
+      name: "Rasgulla",
+      price: "₹ 15",
+      description: "Popular South Asian syrupy dessert, originating from the eastern region of India (primarily West Bengal and Odisha). ",
+      img: "/assets/images/rasgulla.webp"
+    },
+    {
+      name: "Rasmalai",
+      price: "₹ 30",
+      description: "Popular South Asian dessert consisting of soft, spongy chenna (cottage cheese) patties soaked in thickened, sweetened, and saffron-infused milk (rabri).",
+      img: "/assets/images/rasmalai.jpg"
+    },
+    {
+      name: "Khir Kodom",
+      price: "₹ 18",
+      description: "Popular two-layered Bengali sweet consisting of a juicy, mini rasgulla core coated in a sweet, crumbled khoya (milk solids) shell.",
+      img: "/assets/images/khir kodom.jpg"
+    },
+    {
+      name: "Phirni",
+      price: "₹ 50",
+      description: "Traditional North Indian, creamy dessert made by simmering ground basmati rice, milk, and sugar, usually flavored with cardamom, saffron, and nuts.",
+      img: "/assets/images/phirni.jpg"
+    },
+    {
+      name: "Sita Bhog",
+      price: "₹ 28",
+      description: "Famous, GI-tagged, traditional Bengali sweet from Bardhaman, West Bengal, resembling white pulao.",
+      img: "/assets/images/sitabhog.jpg"
+    }
+  ],
+  
+};
+
+function buildCard(item) {
+  return `
+    <div class="group cursor-pointer">
+      <div class="aspect-[4/5] overflow-hidden bg-surface-container mb-6 relative">
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="${item.img}" alt="${item.name}" />
+        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
+      </div>
+      <div class="flex justify-between items-baseline mb-2">
+        <h3 class="font-headline text-2xl italic">${item.name}</h3>
+        <span class="font-body text-primary tracking-widest">${item.price}</span>
+      </div>
+      <p class="font-body text-on-surface-variant text-sm leading-relaxed mb-4">${item.description}</p>
+      ${item.tag ? `<span class="inline-block text-[10px] tracking-[0.2em] uppercase font-label text-outline border border-outline-variant/30 px-2 py-1">${item.tag}</span>` : ''}
+    </div>`;
+}
+
+function switchTab(btn, category) {
+  // Update tab button styles
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.remove('text-primary', 'border-b-2', 'border-primary');
+    b.classList.add('text-on-surface-variant');
+  });
+  btn.classList.add('text-primary', 'border-b-2', 'border-primary');
+  btn.classList.remove('text-on-surface-variant');
+
+  // Animate grid out
+  const grid = document.getElementById('menu-grid');
+  grid.style.opacity = '0';
+  grid.style.transform = 'translateY(12px)';
+  grid.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+
+  setTimeout(() => {
+    grid.innerHTML = menuData[category].map(buildCard).join('');
+    grid.style.opacity = '1';
+    grid.style.transform = 'translateY(0)';
+  }, 200);
+}
+
+// Init with starters on load
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.getElementById('menu-grid');
+  grid.innerHTML = menuData['starters'].map(buildCard).join('');
+});
+</script>
+<!-- Floating Section/Asymmetric Feature -->
+<section class="mt-40 bg-surface-container-low p-12 md:p-24 relative overflow-hidden">
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-headline text-5xl italic mb-8">The Sommelier's Selection</h2>
+<p class="font-body text-on-surface-variant mb-12 text-lg">
+                    Elevate your dining experience with our award-winning cellar. From rare vintages to contemporary craft, our pairing suggestions are designed to harmonize with every delicate flavor.
+                </p>
+<a class="inline-flex items-center group" href="#">
+<span class="font-label uppercase tracking-widest text-sm text-primary border-b border-primary/40 group-hover:border-primary transition-all pb-1">Explore the Vintage List</span>
+<span class="material-symbols-outlined ml-2 text-primary group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+</div>
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-30 grayscale hover:grayscale-0 transition-all duration-1000">
+<img class="w-full h-full object-cover" data-alt="Luxury wine cellar with backlit bottles" src="/assets/images/posto.webp"/>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-900 dark:bg-[#131313] w-full border-t border-yellow-900/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
+<div class="md:col-span-1">
+<span class="font-serif text-3xl text-yellow-500 mb-4 block font-headline italic">Khai Khai</span>
+<p class="font-sans text-neutral-400 text-sm leading-relaxed">Redefining the art of fine dining through heritage, innovation, and an unwavering commitment to quality.</p>
+</div>
+<div>
+<span class="font-serif text-lg text-yellow-500 mb-6 block font-headline">Navigation</span>
+<div class="flex flex-col gap-4">
+<a class="text-neutral-500 hover:text-yellow-400 transition-colors text-sm" href="./menu.html">Menu</a>
+<a class="text-neutral-500 hover:text-yellow-400 transition-colors text-sm" href="./reservation.html">Reservations</a>
+
+</div>
+</div>
+<div>
+<span class="font-serif text-lg text-yellow-500 mb-6 block font-headline">Contact</span>
+<div class="flex flex-col gap-4 text-sm text-neutral-400">
+<p>160 New Town, Kolkata, West Bengal</p>
+<p>T: +91 83350 77942</p>
+
+</div>
+</div>
+<div>
+<span class="font-serif text-lg text-yellow-500 mb-6 block font-headline">Legal</span>
+<div class="flex flex-col gap-4">
+<a class="text-neutral-500 hover:text-yellow-400 transition-colors text-sm" href="#">Privacy Policy</a>
+<a class="text-neutral-500 hover:text-yellow-400 transition-colors text-sm" href="#">Terms of Service</a>
+
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 py-8 px-12 text-center">
+<p class="flex flex-col gap-4 text-sm text-neutral-400">&copy;Khai Khai. All rights reserved.</p>
+</div>  

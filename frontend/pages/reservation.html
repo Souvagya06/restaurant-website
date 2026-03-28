@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reservations | Khai Khai</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#b08c10",
+                        "on-secondary-fixed": "#241a00",
+                        "on-primary": "#3c2f00",
+                        "background": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "primary-container": "#d4af37",
+                        "outline-variant": "#4d4635",
+                        "primary": "#f2ca50",
+                        "outline": "#99907c",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-secondary-fixed-variant": "#584400",
+                        "on-tertiary": "#303221",
+                        "on-error": "#690005",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-fixed-dim": "#c8c8b0",
+                        "on-primary-container": "#554300",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "on-tertiary-fixed-variant": "#474836",
+                        "tertiary-fixed": "#e4e4cc",
+                        "on-tertiary-container": "#454634",
+                        "on-tertiary-fixed": "#1b1d0e",
+                        "secondary-fixed-dim": "#eac249",
+                        "secondary-fixed": "#ffe08b",
+                        "tertiary-container": "#b4b49d",
+                        "on-primary-fixed": "#241a00",
+                        "on-background": "#e5e2e1",
+                        "primary-fixed-dim": "#e9c349",
+                        "primary-fixed": "#ffe088",
+                        "tertiary": "#cfd0b8",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353534",
+                        "surface-container": "#201f1f",
+                        "secondary": "#eac249",
+                        "inverse-primary": "#735c00",
+                        "error-container": "#93000a",
+                        "surface-tint": "#e9c349",
+                        "surface-container-highest": "#353534",
+                        "on-surface-variant": "#d0c5af",
+                        "on-secondary": "#3d2f00",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-bright": "#393939",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#131313",
+                        "surface": "#131313",
+                        "on-secondary-container": "#352800"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-underline {
+            position: relative;
+        }
+        .editorial-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -0.35rem;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: currentColor;
+            transition: height 0.3s ease;
+        }
+        .editorial-underline:hover::after {
+            height: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-950/70 backdrop-blur-xl">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="font-serif text-2xl tracking-tighter text-yellow-500 dark:text-yellow-400">Khai Khai</div>
+<div class="hidden md:flex items-center gap-12">
+<a class="font-sans uppercase tracking-[0.1em] text-xs text-neutral-400 hover:text-yellow-200 transition-colors duration-300" href="./home.html">Home</a>
+<a class="font-sans uppercase tracking-[0.1em] text-xs text-neutral-400 hover:text-yellow-200 transition-colors duration-300" href="./menu.html">Menu</a>
+<a class="font-sans uppercase tracking-[0.1em] text-xs text-neutral-400 hover:text-yellow-200 transition-colors duration-300" href="./about.html">About</a>
+<a class="font-sans uppercase tracking-[0.1em] text-xs text-neutral-400 hover:text-yellow-200 transition-colors duration-300" href="./contact.html">Contact</a>
+<a class="font-sans uppercase tracking-[0.1em] text-xs text-yellow-500 dark:text-yellow-400 relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-yellow-500 after:rounded-full" href="./reservations.html">Reservations</a>
+</div>
+<a href="./login.html"
+   class="font-sans uppercase tracking-[0.1em] text-xs px-6 py-2 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300">
+   Sign Up
+</a>
+</div>
+</nav>
+<main class="min-h-screen pt-24 pb-20 px-6 lg:px-12">
+<div class="max-w-screen-2xl mx-auto">
+<!-- Hero Title Section -->
+<header class="mb-16 mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-8">
+<p class="font-label uppercase tracking-widest text-primary text-xs mb-4">Securing Your Experience</p>
+<h1 class="font-headline text-5xl lg:text-8xl italic font-bold tracking-tight text-on-background leading-none">
+                        The Art of <br/> Reservation
+                    </h1>
+</div>
+<div class="lg:col-span-4 flex items-end">
+<p class="font-body text-on-surface-variant text-sm lg:text-base leading-relaxed max-w-sm">
+                        Immerse yourself in a curated culinary journey. Every detail of your evening is meticulously planned from the moment of your inquiry.
+                    </p>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Reservation Form Section -->
+<section class="lg:col-span-8 relative min-h-[700px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Luxury dining table setting with crystal glassware" class="w-full h-full object-cover opacity-40" data-alt="Elegant candlelit restaurant table set for dinner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr1iqqI95DF3M7vpHJ2zOXe89IB6Fa58eTW7iSXUer8109wAPAw-E0TCMjZNUKCs1yw79kz36YPU33d90_uJ0Bt42hiA3ULrJig3-8cut8Rm6ZchemVAtdv24vS-z6bpmVsayqvfkaSpHrLCyUoOaNJQmn4kN8x8jHALY4CZnqE7EhBvVk-ekJECu7eAmCKmbclnYcjutrN1P_MYJ9DPu3UfuhEDXW7ju8ipq0W1eZuJUmZRc_SiP3Wca5q74Bd6xmadJCAdTnJ1Ow"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50"></div>
+</div>
+<!-- Centered Glassmorphism Form -->
+<div class="relative z-10 w-full max-w-xl p-8 lg:p-12 bg-surface-container-lowest/80 backdrop-blur-2xl shadow-2xl">
+<h2 class="font-headline text-3xl italic text-primary mb-8 text-center">Inquiry Details</h2>
+<form id="reservationForm" class="space-y-10">
+<!-- Name Field -->
+<div class="relative group">
+<label class="font-headline text-sm text-on-surface-variant mb-1 block">Full Name</label>
+<input id="name" class="w-full bg-transparent border-0 border-b border-outline-variant/30 py-3 px-0 font-body text-lg focus:ring-0 focus:border-primary placeholder:text-neutral-700 transition-colors" placeholder="TONY STARK" type="text"/>
+</div>
+<!-- Date and Time Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="relative group">
+<label class="font-headline text-sm text-on-surface-variant mb-1 block">Date</label>
+<input id="date" class="w-full bg-transparent border-0 border-b border-outline-variant/30 py-3 px-0 font-body text-lg focus:ring-0 focus:border-primary transition-colors [color-scheme:dark]" type="date"/>
+</div>
+<div class="relative group">
+<label class="font-headline text-sm text-on-surface-variant mb-1 block">Time</label>
+<select id="time"
+  class="w-full bg-transparent text-on-surface border-0 border-b border-outline-variant/30 py-3 px-0 font-body text-lg focus:ring-0 focus:border-primary transition-colors appearance-none cursor-pointer">
+
+  <option value="18:00" class="bg-[#131313] text-white">18:00 — Sunset Seating</option>
+  <option value="19:30" class="bg-[#131313] text-white">19:30 — Prime Dining</option>
+  <option value="21:00" class="bg-[#131313] text-white">21:00 — Late Evening</option>
+  <option value="22:30" class="bg-[#131313] text-white">22:30 — Nocturnal Tasting</option>
+
+</select></div>
+</div>
+<!-- Guests Count -->
+<div class="relative group">
+<label class="font-headline text-sm text-on-surface-variant mb-4 block">Number of Guests</label>
+<div class="flex items-center gap-8 border-b border-outline-variant/30 pb-3">
+<button id="minusGuest" type="button">-</button>
+<span id="guestCount">2</span>
+<button id="plusGuest" type="button">+</button>
+<span class="ml-auto text-xs font-label uppercase text-neutral-500 tracking-tighter">Maximum 8 per table</span>
+</div>
+</div>
+<!-- Submit CTA -->
+<button class="w-full py-5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-label font-bold uppercase tracking-[0.2em] text-sm hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-primary/10">
+                                Reserve Your Table
+                            </button>
+</form>
+</div>
+</section>
+<!-- Sidebar Content -->
+<aside class="lg:col-span-4 space-y-12">
+<!-- Booking Policy Card -->
+<div class="bg-surface-container-low p-8 lg:p-10">
+<h3 class="font-headline text-2xl italic text-on-background mb-6">Booking Policy</h3>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary text-xl">verified</span>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                    Cancellations must be made at least 48 hours prior to the reservation. A boutique fee may apply for late notices. For cancellation contact us.
+                                </p>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary text-xl">apparel</span>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                    We maintain an elegant dress code. Business casual or evening attire is preferred.
+                                </p>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary text-xl">schedule</span>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                    Tables are held for a maximum of 15 minutes past the reserved time.
+                                </p>
+</div>
+</div>
+</div>
+<!-- Private Events Card -->
+<div class="bg-surface-container-high p-8 lg:p-10 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-9xl">wine_bar</span>
+</div>
+<h3 class="font-headline text-2xl italic text-on-background mb-4">Private Events</h3>
+<p class="text-on-surface-variant text-sm mb-8 relative z-10">
+                            Hosting a celebration? Our private salon accommodates up to 24 guests for exclusive degustation menus and vintage pairings.
+                        </p>
+<a class="inline-block text-primary font-label uppercase text-xs tracking-[0.15em] editorial-underline relative z-10" href="./contact.html">
+                            Inquire for Events
+                        </a>
+</div>
+<!-- Contact/Support -->
+<div class="p-8 border-l border-primary/10">
+<p class="font-label text-xs uppercase text-neutral-500 mb-2">Concierge Assistance</p>
+<p class="font-headline text-xl text-primary mb-1">+91 70445 50606</p>
+<p class="text-xs text-on-surface-variant italic">Available 24/7 for our distinguished guests.</p>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-900 dark:bg-[#131313] w-full border-t border-yellow-900/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
+<div class="md:col-span-1">
+<span class="font-serif text-3xl text-yellow-500 mb-4 block font-headline italic">Khai Khai</span>
+<p class="font-sans text-neutral-400 text-sm leading-relaxed">Redefining the art of fine dining through heritage, innovation, and an unwavering commitment to quality.</p>
+</div>
+<div>
+<span class="font-serif text-lg text-yellow-500 mb-6 block font-headline">Navigation</span>
+<div class="flex flex-col gap-4">
+<a class="text-neutral-500 hover:text-yellow-400 transition-colors text-sm" href="./menu.html">Menu</a>
+<a class="text-neutral-500 hover:text-yellow-400 transition-colors text-sm" href="./reservation.html">Reservations</a>
+
+</div>
+</div>
+<div>
+<span class="font-serif text-lg text-yellow-500 mb-6 block font-headline">Contact</span>
+<div class="flex flex-col gap-4 text-sm text-neutral-400">
+<p>160 New Town, Kolkata, West Bengal</p>
+<p>T: +91 83350 77942</p>
+
+</div>
+</div>
+<div>
+<span class="font-serif text-lg text-yellow-500 mb-6 block font-headline">Legal</span>
+<div class="flex flex-col gap-4">
+<a class="text-neutral-500 hover:text-yellow-400 transition-colors text-sm" href="#">Privacy Policy</a>
+<a class="text-neutral-500 hover:text-yellow-400 transition-colors text-sm" href="#">Terms of Service</a>
+
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 py-8 px-12 text-center">
+<p class="flex flex-col gap-4 text-sm text-neutral-400">&copy;Khai Khai. All rights reserved.</p>
+</div>  
+<script>
+// ===== USER CHECK + RESERVATION =====
+const form = document.getElementById("reservationForm");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const date = document.getElementById("date").value;
+  const time = document.getElementById("time").value;
+  const guests = document.getElementById("guestCount").textContent;
+
+  try {
+    const res = await fetch("http://localhost:5000/check-user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name })
+    });
+
+    const userData = await res.json();
+
+    if (!userData.exists) {
+      alert("Please Sign Up First");
+      window.location.href = "/login.html";
+      return;
+    }
+
+    // ===== SAVE RESERVATION =====
+    const reserveRes = await fetch("http://localhost:5000/reserve", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        user_id: userData.user.id,
+        guests,
+        date,
+        time
+      })
+    });
+
+    const reserveData = await reserveRes.json();
+
+    if (reserveData.success) {
+      alert("Reservation Confirmed ✅");
+    } else {
+      alert("Reservation Failed ❌");
+    }
+
+  } catch (err) {
+    console.error(err);
+    alert("Server Error");
+  }
+});
+
+
+// ===== GUEST COUNTER =====
+const minusBtn = document.getElementById("minusGuest");
+const plusBtn = document.getElementById("plusGuest");
+const guestCount = document.getElementById("guestCount");
+
+minusBtn.addEventListener("click", () => {
+  let val = parseInt(guestCount.textContent);
+  if (val > 1) guestCount.textContent = val - 1;
+});
+
+plusBtn.addEventListener("click", () => {
+  let val = parseInt(guestCount.textContent);
+  guestCount.textContent = val + 1;
+});
+</script>
+</body></html>

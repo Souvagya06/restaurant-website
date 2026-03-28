@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#b08c10",
+              "on-secondary-fixed": "#241a00",
+              "on-primary": "#3c2f00",
+              "background": "#131313",
+              "on-surface": "#e5e2e1",
+              "primary-container": "#d4af37",
+              "outline-variant": "#4d4635",
+              "primary": "#f2ca50",
+              "outline": "#99907c",
+              "on-primary-fixed-variant": "#574500",
+              "on-secondary-fixed-variant": "#584400",
+              "on-tertiary": "#303221",
+              "on-error": "#690005",
+              "surface-container-low": "#1c1b1b",
+              "tertiary-fixed-dim": "#c8c8b0",
+              "on-primary-container": "#554300",
+              "inverse-surface": "#e5e2e1",
+              "inverse-on-surface": "#313030",
+              "on-tertiary-fixed-variant": "#474836",
+              "tertiary-fixed": "#e4e4cc",
+              "on-tertiary-container": "#454634",
+              "on-tertiary-fixed": "#1b1d0e",
+              "secondary-fixed-dim": "#eac249",
+              "secondary-fixed": "#ffe08b",
+              "tertiary-container": "#b4b49d",
+              "on-primary-fixed": "#241a00",
+              "on-background": "#e5e2e1",
+              "primary-fixed-dim": "#e9c349",
+              "primary-fixed": "#ffe088",
+              "tertiary": "#cfd0b8",
+              "surface-container-lowest": "#0e0e0e",
+              "error": "#ffb4ab",
+              "surface-variant": "#353534",
+              "surface-container": "#201f1f",
+              "secondary": "#eac249",
+              "inverse-primary": "#735c00",
+              "error-container": "#93000a",
+              "surface-tint": "#e9c349",
+              "surface-container-highest": "#353534",
+              "on-surface-variant": "#d0c5af",
+              "on-secondary": "#3d2f00",
+              "surface-container-high": "#2a2a2a",
+              "surface-bright": "#393939",
+              "on-error-container": "#ffdad6",
+              "surface-dim": "#131313",
+              "surface": "#131313",
+              "on-secondary-container": "#352800"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(14, 14, 14, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(19,19,19,0.4) 0%, rgba(19,19,19,0.9) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="font-serif text-2xl tracking-tighter text-yellow-500 dark:text-yellow-400 font-headline italic">
+                Khai Khai
+            </div>
+<div class="hidden md:flex items-center gap-12">
+<a class="font-sans uppercase tracking-[0.1em] text-xs text-yellow-500 dark:text-yellow-400 relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-yellow-500 after:rounded-full" href="./home.html">Home</a>
+<a class="font-sans uppercase tracking-[0.1em] text-xs text-neutral-400 hover:text-yellow-200 transition-colors duration-300" href="./menu.html">Menu</a>
+<a class="font-sans uppercase tracking-[0.1em] text-xs text-neutral-400 hover:text-yellow-200 transition-colors duration-300" href="./about.html">About</a>
+<a class="font-sans uppercase tracking-[0.1em] text-xs text-neutral-400 hover:text-yellow-200 transition-colors duration-300" href="./contact.html">Contact</a>
+<a class="font-sans uppercase tracking-[0.1em] text-xs text-neutral-400 hover:text-yellow-200 transition-colors duration-300" href="./reservation.html">Reservations</a>
+</div>
+<a href="./login.html"
+   class="font-sans uppercase tracking-[0.1em] text-xs px-6 py-2 border border-primary/30 text-primary hover:bg-primary hover:text-on-primary transition-all duration-300">
+   Sign Up
+</a>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-screen flex items-end overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Luxury dining table setting with gourmet dish" class="w-full h-full object-cover" data-alt="Exquisite close up of high-end gourmet culinary plating" src="/assets/images/biryani1.jpg"/>
+<div class="absolute inset-0 hero-overlay"></div>
+</div>
+<div class="relative z-10 w-full max-w-screen-2xl mx-auto px-8 pb-24 grid grid-cols-12 gap-6">
+<div class="col-span-12 md:col-span-8 lg:col-span-6">
+<span class="font-label uppercase tracking-[0.3em] text-primary text-xs mb-4 block">Est. 2024 • Kolkata / West Bnegal</span>
+<h1 class="font-headline text-6xl md:text-8xl italic tracking-tighter text-on-surface leading-[0.9] mb-8">
+                    Exquisite Flavors <br/> Redefined
+                </h1>
+<div class="flex flex-col sm:flex-row gap-6">
+<a href="./menu.html"
+   class="gold-gradient text-on-primary font-bold uppercase tracking-widest text-xs px-10 py-5 active:scale-95 transition-all">
+   View Menu
+</a>
+<a href="./reservation.html"
+   class="border border-outline-variant/30 text-on-surface hover:bg-on-surface/5 font-bold uppercase tracking-widest text-xs px-10 py-5 active:scale-95 transition-all">
+   Book Table
+</a>
+</div>
+</div>
+</div>
+</header>
+<!-- Featured Dishes Section -->
+<section class="py-32 bg-surface">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-20 gap-8">
+<div>
+<h2 class="font-headline text-5xl italic text-on-surface mb-4">The Season's Selection</h2>
+<p class="text-on-surface-variant max-w-md font-light leading-relaxed">Curated by Executive Chef Julian Vance, these signature creations define our commitment to culinary perfection.</p>
+</div>
+<div class="font-label uppercase tracking-widest text-primary text-sm flex items-center gap-4">
+                    
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-low group cursor-pointer overflow-hidden">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Signature Wagyu Steak" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Perfectly seared premium wagyu beef steak presentation" src="/assets/images/chicken kosha.jpeg"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline text-2xl italic">Chicken Kosha</h3>
+</div>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed mb-6">A rich, slow-cooked Bengali-style chicken curry featuring a thick, dark-brown spice paste rather than a runny gravy. It is characterized by tender chicken, often with potatoes, marinated in yogurt and cooked in mustard oil to achieve a deep, aromatic flavor.</p>
+<div class="w-full h-px bg-outline-variant/20"></div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low group cursor-pointer overflow-hidden md:mt-12">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Black Truffle Pasta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Handcrafted pasta topped with fresh black truffle shavings" src="/assets/images/mutton biryani.jpg"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline text-2xl italic">Muton Biryani</h3>
+</div>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed mb-6">A rich, aromatic Indian rice dish featuring tender, marinated mutton (goat meat) slow-cooked with basmati rice, caramelized onions, yogurt, ghee, and exotic spices.</p>
+<div class="w-full h-px bg-outline-variant/20"></div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low group cursor-pointer overflow-hidden">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Saffron Scallops" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Elegant pan-seared scallops served with saffron emulsion" src="/assets/images/paneer.jpg"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline text-2xl italic">Butter Paneer</h3>
+</div>
+<p class="text-on-surface-variant text-sm font-light leading-relaxed mb-6">A popular, mildly spiced North Indian curry. It features soft paneer cubes cooked in a creamy, velvety, and slightly sweet tomato-cashew gravy enriched with butter, ginger, and aromatic spices like kasuri methi. </p>
+<div class="w-full h-px bg-outline-variant/20"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Heritage Section -->
+<section class="py-32 bg-surface-container-low overflow-hidden">
+<div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-12 gap-12 items-center">
+<div class="col-span-12 lg:col-span-7 order-2 lg:order-1">
+<div class="relative">
+<img alt="Chef in kitchen" class="w-full h-[600px] object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-1000" data-alt="Executive chef meticulously preparing a luxury dish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCktV0waqepnsERLXeFV89-AadUjw_hcY9DwR71ZJfQr7O2pWPXKd4ykhGJE0VJx3J1tUKxbMIyy9XGkirHfh2S3XXJBZLMNXDCZ2cDT1OYlF87kKOzYGfUEuB97fTJ2iRV4yI5I-F2W1zszYNd-zzcJZTF9xo0fB62zzDI2Y_TnJv-zZfniVu6q0i6GRr1_cgSzrmToMx7_wuJKqueVl1GYeQM7M8uHA8dbZs_oTkZiHsbyX0aDhljd0KsD87NjZhHkPhO4auZO9aS"/>
+<div class="absolute -bottom-8 -right-8 w-64 h-64 bg-primary p-1 flex items-center justify-center hidden md:flex">
+<div class="border border-on-primary w-full h-full flex flex-col items-center justify-center text-center p-6">
+<span class="font-headline italic text-4xl text-on-primary leading-tight">2 Years</span>
+<span class="font-label uppercase tracking-widest text-[10px] text-on-primary-fixed mt-2">of Culinary Excellence</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-5 order-1 lg:order-2">
+<span class="font-label uppercase tracking-[0.3em] text-primary text-xs mb-6 block">Our Legacy</span>
+<h2 class="font-headline text-5xl italic text-on-surface mb-8 leading-tight">The Heritage of <br/> Khai Khai</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed font-light">
+<p>Rooted in the rich traditions of Indian culinary heritage, Khai Khai celebrates the timeless flavors passed down through generations. From the royal kitchens of Rajasthan to the coastal spices of Kerala, every dish reflects a journey across India’s diverse culture.</p>
+<p>We source our ingredients from local farmers and traditional artisans, ensuring authenticity, sustainability, and unmatched quality. Our kitchen blends age-old techniques with modern refinement, where every meal is crafted with precision, passion, and a deep respect for Indian gastronomy.</p>
+</div>
+<div class="mt-12">
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-neutral-900 dark:bg-[#131313] w-full border-t border-yellow-900/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
+<div class="md:col-span-1">
+<span class="font-serif text-3xl text-yellow-500 mb-4 block font-headline italic">Khai Khai</span>
+<p class="font-sans text-neutral-400 text-sm leading-relaxed">Redefining the art of fine dining through heritage, innovation, and an unwavering commitment to quality.</p>
+</div>
+<div>
+<span class="font-serif text-lg text-yellow-500 mb-6 block font-headline">Navigation</span>
+<div class="flex flex-col gap-4">
+<a class="text-neutral-500 hover:text-yellow-400 transition-colors text-sm" href="./menu.html">Menu</a>
+<a class="text-neutral-500 hover:text-yellow-400 transition-colors text-sm" href="./reservation.html">Reservations</a>
+
+</div>
+</div>
+<div>
+<span class="font-serif text-lg text-yellow-500 mb-6 block font-headline">Contact</span>
+<div class="flex flex-col gap-4 text-sm text-neutral-400">
+<p>160 New Town, Kolkata, West Bengal</p>
+<p>T: +91 83350 77942</p>
+
+</div>
+</div>
+<div>
+<span class="font-serif text-lg text-yellow-500 mb-6 block font-headline">Legal</span>
+<div class="flex flex-col gap-4">
+<a class="text-neutral-500 hover:text-yellow-400 transition-colors text-sm" href="#">Privacy Policy</a>
+<a class="text-neutral-500 hover:text-yellow-400 transition-colors text-sm" href="#">Terms of Service</a>
+
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 py-8 px-12 text-center">
+<p class="flex flex-col gap-4 text-sm text-neutral-400">&copy;Khai Khai. All rights reserved.</p>
+</div>  
