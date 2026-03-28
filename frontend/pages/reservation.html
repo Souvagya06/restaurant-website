@@ -270,7 +270,6 @@ const form = document.getElementById("reservationForm");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const name = document.getElementById("name").value.trim();
   const date = document.getElementById("date").value;
   const time = document.getElementById("time").value;
   const guests = document.getElementById("guestCount").textContent;
@@ -278,34 +277,24 @@ form.addEventListener("submit", async (e) => {
   try {
     const user = JSON.parse(localStorage.getItem("user"));
 
-    // 🚨 Step 1: Check if user logged in
-    if (!user) {
+    if (!user || !user.id) {
       alert("Please Sign Up First");
       window.location.href = "login.html";
       return;
     }
 
-    // 🚨 Step 2: Validate name matches logged-in user
-    if (user.name.toLowerCase() !== name.toLowerCase()) {
-      alert("Invalid user. Please Sign Up First");
-      window.location.href = "./login.html";
-      return;
-    }
-
-    // 🚨 Step 3: Validate required fields
     if (!date || !time || !guests) {
       alert("Please fill all details");
       return;
     }
 
-    // ===== SAVE RESERVATION =====
     const reserveRes = await fetch("https://restaurant-website-njv5.onrender.com/reserve", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        user_id: user.id,   // ✅ FIXED (no hardcoding)
+        user_id: user.id,
         guests,
         date,
         time
@@ -341,7 +330,7 @@ minusBtn.addEventListener("click", () => {
 
 plusBtn.addEventListener("click", () => {
   let val = parseInt(guestCount.textContent);
-  if (val < 8) guestCount.textContent = val + 1; // optional max limit
+  if (val < 8) guestCount.textContent = val + 1;
 });
 </script>
 </body></html>
