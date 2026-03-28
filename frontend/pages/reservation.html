@@ -188,7 +188,7 @@
 <div class="flex gap-4">
 <span class="material-symbols-outlined text-primary text-xl">verified</span>
 <p class="text-on-surface-variant text-sm leading-relaxed">
-                                    Cancellations must be made at least 48 hours prior to the reservation. A boutique fee may apply for late notices. For cancellation[] contact us.
+                                    Cancellations must be made at least 48 hours prior to the reservation. A boutique fee may apply for late notices. For cancellation contact us.
                                 </p>
 </div>
 <div class="flex gap-4">
@@ -270,24 +270,38 @@ const form = document.getElementById("reservationForm");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  const name = document.getElementById("name").value.trim();
   const date = document.getElementById("date").value;
   const time = document.getElementById("time").value;
   const guests = document.getElementById("guestCount").textContent;
 
   try {
-    const user = JSON.parse(localStorage.getItem("user"));
+    // 🚨 Step 1: Check user exists in DB
+    const checkRes = await fetch("https://restaurant-website-njv5.onrender.com/check-user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name })
+    });
 
-    if (!user || !user.id) {
+    const checkData = await checkRes.json();
+
+    if (!checkData.exists) {
       alert("Please Sign Up First");
       window.location.href = "login.html";
       return;
     }
 
+    const user = checkData.user;
+
+    // 🚨 Step 2: Validate fields
     if (!date || !time || !guests) {
       alert("Please fill all details");
       return;
     }
 
+    // ===== SAVE RESERVATION =====
     const reserveRes = await fetch("https://restaurant-website-njv5.onrender.com/reserve", {
       method: "POST",
       headers: {
@@ -306,7 +320,7 @@ form.addEventListener("submit", async (e) => {
     if (reserveData.success) {
       alert("Reservation Confirmed ✅");
       form.reset();
-      guestCount.textContent = "2";
+      guestCount.textContent = "2"; // reset guests
     } else {
       alert(reserveData.error || "Reservation Failed ❌");
     }
@@ -325,12 +339,14 @@ const guestCount = document.getElementById("guestCount");
 
 minusBtn.addEventListener("click", () => {
   let val = parseInt(guestCount.textContent);
-  if (val > 1) guestCount.textContent = val - 1;
+  if (val > 1) {
+    guestCount.textContent = val - 1;
+  }
 });
 
 plusBtn.addEventListener("click", () => {
   let val = parseInt(guestCount.textContent);
-  if (val < 8) guestCount.textContent = val + 1;
+  guestCount.textContent = val + 1;
 });
 </script>
 </body></html>
