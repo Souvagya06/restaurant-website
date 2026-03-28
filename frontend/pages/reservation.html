@@ -287,7 +287,8 @@ form.addEventListener("submit", async (e) => {
 
     // 🚨 Step 2: Validate name matches logged-in user
     if (user.name.toLowerCase() !== name.toLowerCase()) {
-      alert("Name does not match logged-in user. Please use your registered name.");
+      alert("Invalid user. Please Sign Up First");
+      window.location.href = "./login.html";
       return;
     }
 
