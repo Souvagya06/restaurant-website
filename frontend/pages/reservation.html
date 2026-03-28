@@ -188,7 +188,7 @@
 <div class="flex gap-4">
 <span class="material-symbols-outlined text-primary text-xl">verified</span>
 <p class="text-on-surface-variant text-sm leading-relaxed">
-                                    Cancellations must be made at least 48 hours prior to the reservation. A boutique fee may apply for late notices. For cancellation contact us.
+                                    Cancellations must be made at least 48 hours prior to the reservation. A boutique fee may apply for late notices. For cancellation[] contact us.
                                 </p>
 </div>
 <div class="flex gap-4">
@@ -276,30 +276,23 @@ form.addEventListener("submit", async (e) => {
   const guests = document.getElementById("guestCount").textContent;
 
   try {
-    const res = await fetch("http://localhost:5000/check-user", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ name })
-    });
+    const user = JSON.parse(localStorage.getItem("user"));
 
-    const userData = await res.json();
-
-    if (!userData.exists) {
+    // 🚨 If user not logged in
+    if (!user) {
       alert("Please Sign Up First");
-      window.location.href = "/login.html";
+      window.location.href = "login.html";
       return;
     }
 
     // ===== SAVE RESERVATION =====
-    const reserveRes = await fetch("http://localhost:5000/reserve", {
+    const reserveRes = await fetch("https://restaurant-website-njv5.onrender.com/reserve", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        user_id: userData.user.id,
+        user_id: 1, // TEMP FIX (since ID not stored yet)
         guests,
         date,
         time

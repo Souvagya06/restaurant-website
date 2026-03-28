@@ -233,19 +233,23 @@ form.addEventListener("submit", async (e) => {
   }
 
   try {
-    const res = await fetch("http://localhost:5000/signup", {
+    const res = await fetch("https://restaurant-website-njv5.onrender.com/signup", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password })
     });
 
     const data = await res.json();
 
     if (data.success) {
-      localStorage.setItem("user", JSON.stringify(data.user));
       alert("New user created");
+
+      // Save minimal user info
+      localStorage.setItem("user", JSON.stringify({
+        name,
+        email
+      }));
+
       window.location.href = "/reservation.html";
     } else {
       alert(data.error || "Signup failed");
