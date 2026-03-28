@@ -221,7 +221,7 @@
 <!-- Contact/Support -->
 <div class="p-8 border-l border-primary/10">
 <p class="font-label text-xs uppercase text-neutral-500 mb-2">Concierge Assistance</p>
-<p class="font-headline text-xl text-primary mb-1">+91 83350 77942</p>
+<p class="font-headline text-xl text-primary mb-1">+91 83350 77942git</p>
 <p class="text-xs text-on-surface-variant italic">Available 24/7 for our distinguished guests.</p>
 </div>
 </aside>
@@ -270,7 +270,7 @@ const form = document.getElementById("reservationForm");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const name = document.getElementById("name").value;
+  const name = document.getElementById("name").value.trim();
   const date = document.getElementById("date").value;
   const time = document.getElementById("time").value;
   const guests = document.getElementById("guestCount").textContent;
@@ -278,10 +278,22 @@ form.addEventListener("submit", async (e) => {
   try {
     const user = JSON.parse(localStorage.getItem("user"));
 
-    // 🚨 If user not logged in
+    // 🚨 Step 1: Check if user logged in
     if (!user) {
       alert("Please Sign Up First");
       window.location.href = "login.html";
+      return;
+    }
+
+    // 🚨 Step 2: Validate name matches logged-in user
+    if (user.name.toLowerCase() !== name.toLowerCase()) {
+      alert("Name does not match logged-in user. Please use your registered name.");
+      return;
+    }
+
+    // 🚨 Step 3: Validate required fields
+    if (!date || !time || !guests) {
+      alert("Please fill all details");
       return;
     }
 
@@ -292,7 +304,7 @@ form.addEventListener("submit", async (e) => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        user_id: 1, // TEMP FIX (since ID not stored yet)
+        user_id: user.id,   // ✅ FIXED (no hardcoding)
         guests,
         date,
         time
@@ -303,8 +315,10 @@ form.addEventListener("submit", async (e) => {
 
     if (reserveData.success) {
       alert("Reservation Confirmed ✅");
+      form.reset();
+      guestCount.textContent = "2";
     } else {
-      alert("Reservation Failed ❌");
+      alert(reserveData.error || "Reservation Failed ❌");
     }
 
   } catch (err) {
@@ -326,7 +340,7 @@ minusBtn.addEventListener("click", () => {
 
 plusBtn.addEventListener("click", () => {
   let val = parseInt(guestCount.textContent);
-  guestCount.textContent = val + 1;
+  if (val < 8) guestCount.textContent = val + 1; // optional max limit
 });
 </script>
 </body></html>
