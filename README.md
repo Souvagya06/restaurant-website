@@ -147,7 +147,6 @@ http://localhost:5000
 * 📧 Email confirmation system
 * 📊 Admin dashboard
 * 📱 Mobile responsiveness improvements
-* 🌐 Deployment (Render / Vercel)
 
 ---
 
