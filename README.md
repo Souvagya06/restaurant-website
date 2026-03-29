@@ -22,7 +22,7 @@ A full-stack restaurant booking platform that allows users to sign up, log in, a
 
 * HTML5
 * CSS3 / Tailwind CSS
-* JavaScript (Vanilla)
+* JavaScript 
 
 ### Backend
 
